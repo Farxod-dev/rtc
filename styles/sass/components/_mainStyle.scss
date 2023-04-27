@@ -159,6 +159,10 @@
     @include media($sm){
       top: 20%;
     }
+    @include media($xs){
+      left: 0;
+      padding: 0 15px;
+    }
     &__paragraph{
       color: $grey;
       @include media(320px){
