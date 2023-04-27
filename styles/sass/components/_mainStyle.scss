@@ -145,7 +145,7 @@
   max-height: 80vh;
   height: 100%;
   @include media($sm){
-    min-height: 80vh;
+    min-height: 50vh;
   }
 }
 .header{
@@ -157,7 +157,7 @@
     z-index: 99;
     color: $white;
     @include media($sm){
-      top: 30%;
+      top: 20%;
     }
     &__paragraph{
       color: $grey;
