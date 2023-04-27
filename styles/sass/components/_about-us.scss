@@ -1,0 +1,59 @@
+.aboutUs-height {
+  max-height: 60dvh !important;
+}
+
+.aboutUs-info {
+  top: 30% !important;
+}
+
+.active {
+  &__link {
+    font-weight: 500;
+    display: inline-block;
+    margin: 0 26px;
+    position: relative;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 80%;
+      background: $red;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      transition: .5s;
+    }
+  }
+}
+.aboutUs{
+  &__title{
+    margin-top: 50px;
+    position: relative;
+    @include mainHeaderType;
+  }
+  &__descr{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    text-align: justify;
+    @include texts-descr
+    @include media($sm){
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .aboutUs__descr__part-two{
+      @include media($sm){
+        margin-top: 30px;
+      }
+    }
+  }
+}
+.aboutUs-mission{
+  margin-top: 150px !important;
+  margin-bottom: 250px;
+}
