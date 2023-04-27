@@ -4,6 +4,9 @@
 
 .aboutUs-info {
   top: 30% !important;
+  @include media($sm){
+    top: 20%;
+  }
 }
 
 .active {
