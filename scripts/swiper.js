@@ -96,12 +96,3 @@ gsap.from('.about__info__header', {
     opacity: 0,
     duration: 1,
 })
-
-gsap.to('.partnersItem', {
-    y: -300,
-    duration: 1,
-    scrollTrigger: {
-        trigger: '.partnersItem',
-        scrub:1
-    }
-})
