@@ -20,7 +20,9 @@
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-
+    @include media($sm){
+      margin-top: 15px;
+    }
     &::after {
       position: absolute;
       content: '';
