@@ -35,6 +35,9 @@
     font-size: 14px;
   }
 }
+.contacts__link{
+  scroll-behavior: smooth;
+}
 .selector{
   color: $color;
 }
@@ -72,6 +75,7 @@
     opacity: 0;
   }
   &__link{
+    color: $color !important;
     font-weight: 500;
     display: inline-block;
     margin: 0 26px;
@@ -146,6 +150,11 @@
   height: 100%;
   @include media($sm){
     min-height: 50vh;
+  }
+}
+.m-bottom{
+  @include media($sm){
+    margin-bottom: 10px;
   }
 }
 .header{
@@ -416,6 +425,17 @@
     @include media(320px){
       grid-template-columns: repeat(1, 1fr);
     }
+    &-bg{
+      background: $white;
+      padding: 60px 90px;
+      @include media(971px){
+        column-gap: 10px;
+        row-gap: 10px;
+      }
+      @include media($xs){
+        padding: 30px 15px;
+      }
+    }
     &__img{
       width: 300px;
       max-width: 100%;
@@ -425,10 +445,14 @@
     &__card{
       border: 1px solid $grey;
       padding: 30px 10px;
+      @include media(1025px){
+        padding: 15px 10px;
+      }
     }
   }
 }
 .contactInfo{
+  position: relative;
   margin-top: 100px;
   background-image: url('../../images/main/contact.jpg');
   background-position: center;
@@ -507,6 +531,7 @@
   -ms-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
+  color: $color;
   &:hover{
     color: $red;
   }
@@ -514,7 +539,7 @@
 #footer{
   padding-top: 45px;
   padding-bottom: 40px;
-  background: $color;
+  background: $blue;
   color: $white;
 }
 .footer{
@@ -526,6 +551,7 @@
     &__link{
       margin: 15px;
       font-size: 20px;
+      color: $white;
       @include media($xs){
         font-size: 16px;
       }
@@ -539,7 +565,7 @@
   }
   &__copy{
     margin-top: 50px;
-    color: $grey;
+    color: $white;
     text-align: center;
     @include media($xs){
       font-size: 14px;

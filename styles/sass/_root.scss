@@ -11,7 +11,7 @@ $gutter: 15px;
 }
 
 @mixin container($padding: $gutter) {
-  max-width: $lg;
+  max-width: $lg !important;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -51,6 +51,7 @@ button{
 }
 a{
   display: inline-block;
+  text-decoration: none !important;
 }
 $font-play: 'Manrope';
 

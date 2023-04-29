@@ -45,7 +45,7 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 50px;
     text-align: justify;
-    @include texts-descr
+    @include texts-descr;
     @include media($sm){
       grid-template-columns: repeat(1, 1fr);
     }

@@ -22,15 +22,15 @@ let menu = document.querySelector('.burger');
 let list = document.querySelector('.list')
 
 // list.addEventListener()
-list.addEventListener('click', function (event){
-    if (event.target.classList.contains('list__link')){
+list.addEventListener('click', function (event) {
+    if (event.target.classList.contains('list__link')) {
         this.classList.remove('active')
     }
 })
 
 
-menu.addEventListener('click', function (event){
-    if (!list.classList.contains('active')){
+menu.addEventListener('click', function (event) {
+    if (!list.classList.contains('active')) {
         list.classList.add('active')
     } else {
         list.classList.remove('active')
@@ -53,46 +53,55 @@ let proImg = document.querySelectorAll('.products__img')
 let proCard = document.querySelectorAll('.products__card');
 let solCard = document.querySelectorAll('.solution__card');
 let about = document.querySelectorAll('.about');
-proImg.forEach(el =>{
+proImg.forEach(el => {
     gsap.from(el, {
-        opacity:0,
-        y:50,
-        duration:1,
-        scrollTrigger:{
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
             trigger: el,
         }
     })
 })
-proCard.forEach(el =>{
+proCard.forEach(el => {
     gsap.to(el, {
         y: -200,
-        scrollTrigger:{
+        scrollTrigger: {
             trigger: el,
             scrub: 1
         }
     })
 })
-solCard.forEach(el =>{
+solCard.forEach(el => {
     gsap.to(el, {
         y: -150,
-        scrollTrigger:{
+        scrollTrigger: {
             trigger: el,
             scrub: 1
         }
     })
 })
-about.forEach(el =>{
+about.forEach(el => {
     gsap.from(el, {
-        y:100,
+        y: 100,
         opacity: 0,
-        duration:1,
-        scrollTrigger:{
+        duration: 1,
+        scrollTrigger: {
             trigger: el,
         }
     })
 })
 gsap.from('.about__info__header', {
-    y:100,
+    y: 100,
     opacity: 0,
-    duration:1,
+    duration: 1,
+})
+
+gsap.to('.partnersItem', {
+    y: -300,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.partnersItem',
+        scrub:1
+    }
 })

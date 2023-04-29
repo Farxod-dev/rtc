@@ -11,10 +11,11 @@ a {
 
 ul {
   list-style: none;
+  margin-bottom: 0 !important;
 }
 body {
-  font-family: $font-play;
-  background: $body;
+  font-family: $font-play !important;
+  background: #ececec !important;
   color: $color;
   overflow-x: hidden;
 }
@@ -23,15 +24,16 @@ body {
   @include container;
 }
 .btn{
-  border: 1px solid $grey;
+  border: 1px solid $grey !important;
   margin-top: 50px;
+  border-radius: unset !important;
   -webkit-transition: .5s;
   -moz-transition: .5s;
   -ms-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
   &:hover{
-    background: $red;
+    background: $red !important;
   }
   &__link{
     -webkit-transition: .5s;
@@ -40,6 +42,7 @@ body {
     -o-transition: .5s;
     transition: .5s;
     font-weight: 500;
+    color: $color;
     padding: 8px 11px 8px 13px;
     @include media($xs){
       font-size: 14px;
@@ -64,4 +67,7 @@ body {
   -ms-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
+}
+.indent{
+  text-indent: 25px;
 }
