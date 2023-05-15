@@ -526,6 +526,10 @@
     font-weight: 100;
     font-size: 4rem;
     text-align: center;
+    @include media($xs) {
+      font-size: 2rem;
+      line-height: unset;
+    }
   }
 
   &-card {

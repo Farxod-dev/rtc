@@ -767,6 +767,13 @@ body {
     text-align: center
 }
 
+@media (max-width: 576px) {
+    .solution__title {
+        font-size: 2rem;
+        line-height: unset
+    }
+}
+
 .solution-card {
     margin-top: 100px;
     display: grid;
