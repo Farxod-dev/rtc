@@ -511,6 +511,70 @@
   background-image: url("../../images/pexels-adrien-olichon-2823459.jpg");
 }
 
+.solutions {
+  color: white;
+  position: relative;
+  top: -55px;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.solution {
+  &__title {
+    margin-top: 50px;
+    font-weight: 100;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &-card {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+    height: 100%;
+    margin-bottom: 50px;
+    @include media($sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media($xs) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__cards {
+
+    &__img {
+      max-width: 400px;
+      width: 100%;
+      transition: .5s;
+      border: 4px solid transparent;
+
+      &:hover {
+        border: 4px solid $red;
+      }
+    }
+
+    &__title {
+      position: relative;
+      top: -40px;
+      left: -10px;
+      background: $red;
+      color: white;
+      padding: 5px 10px;
+      display: inline;
+      font-weight: 300;
+      font-size: 14px;
+      -webkit-transition: .5s;
+      -moz-transition: .5s;
+      -ms-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s;
+    }
+  }
+}
 .column-revert {
   @include media(1090px) {
     display: flex;
