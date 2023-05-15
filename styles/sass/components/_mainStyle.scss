@@ -15,17 +15,29 @@
     width: 34px;
     background: $red;
     top: 0;
-    bottom:0;
+    bottom: 0;
     left: -35px;
     margin: auto;
   }
 }
-@mixin container__larges{
+
+#main {
+  position: relative;
+  top: -80px;
+}
+
+.logo {
+  max-width: 250px;
+  width: 100%;
+}
+
+@mixin container__larges {
   max-width: 1320px;
   width: 100%;
   margin: auto;
 }
-@mixin  texts-descr{
+
+@mixin texts-descr {
   font-size: 16px;
   line-height: 189.02%;
   /* or 30px */
@@ -42,15 +54,18 @@
 .selector{
   color: $color;
 }
-.nav{
-  background: $body;
-  @include media($sm){
+.nav {
+  z-index: 100000;
+  position: relative;
+  @include media($sm) {
     position: relative;
 
   }
 }
-.navigation{
-  display:  flex;
+.navigation {
+  position: relative;
+  z-index: 1000;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
@@ -86,9 +101,10 @@
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    @include media($sm){
+    @include media($sm) {
       margin-top: 20px;
       font-size: 18px;
+      color: #000 !important;
     }
     &::after{
       position: absolute;
@@ -138,42 +154,183 @@
     -ms-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    &:hover{
+
+    &:hover {
       background: $red;
     }
 
   }
 }
+
+.button-color {
+  color: $red !important;
+}
+
+.sw-none {
+  display: none !important;
+}
+
+.swiper {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 46px;
+      line-height: 56px;
+      font-weight: 200;
+      font-style: normal;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 50px rgba(0, 0, 0, .4);
+      text-decoration: none;
+      @include media($sm) {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 30px;
+        line-height: unset;
+      }
+      @include media($xs) {
+        font-size: 25px;
+        line-height: unset;
+      }
+      @include media(321px) {
+        font-size: 21px;
+        line-height: unset;
+      }
+
+      &-2 {
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: 300;
+        @include media($sm) {
+          margin-bottom: 10px;
+        }
+        @include media($xs) {
+          font-size: 16px;
+          text-align: center;
+        }
+
+      }
+    }
+
+    &__red_elem {
+      height: 3px;
+      width: 100px;
+      background-color: $red;
+    }
+
+    &__button {
+      margin-top: 50px;
+      position: relative;
+      @include media($sm) {
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      &:before {
+        content: "";
+        border: 2px solid $red;
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: skewX(-8deg);
+      }
+
+      &__link {
+        padding: 10px 15px;
+        color: $color;
+      }
+    }
+
+    &__info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 100px;
+      @include media($sm) {
+        margin-top: 30px;
+      }
+      @include media($xs) {
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+
+      &__descr {
+        font-size: 24px;
+        text-transform: uppercase;
+        @include media($sm) {
+          font-size: 20px;
+        }
+        @include media($xs) {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
 #myVideo {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
   width: 100dvw;
   object-fit: cover;
-  max-height: 80vh;
+  min-height: 100vh;
   height: 100%;
-  @include media($sm){
+  @include media($sm) {
     min-height: 50vh;
   }
 }
-.m-bottom{
-  @include media($sm){
+
+.m-bottom {
+  @include media($sm) {
     margin-bottom: 10px;
   }
 }
-.header{
 
-  &__info{
-    position: absolute;
-    top: 40%;
-    left: 10%;
+.header__bg {
+  background-color: rgba(0, 0, 0, 0.71);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 100vh;
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
     z-index: 99;
     color: $white;
-    @include media($sm){
+    @include media($sm) {
       top: 20%;
     }
-    @include media($xs){
+    @include media($xs) {
       left: 0;
       padding: 0 15px;
     }
-    &__paragraph{
+
+    &__paragraph {
       color: $grey;
       @include media(320px){
         font-size: 14px;
@@ -264,64 +421,119 @@
   align-items: center;
 }
 
-.products{
+.products {
+  color: white;
   position: relative;
-  @include container__larges;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  margin-top: 160px;
-  @include media($sm){
-    flex-direction: column;
+  top: -55px;
+  min-height: 100vh;
+  height: 100%;
+  background-image: url("../../images/pexels-photomix-company-518244 1.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  @include media(1090px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column: revert;
+    padding: 50px 0;
   }
-  &__img{
-    width: 755px;
-    max-width: 100%;
-    height: 630px;
-    max-height: 100%;
+
+  &__img {
+
+    max-width: 500px;
+    align-self: center;
+    justify-self: flex-start;
+    width: 100%;
     object-fit: cover;
-    @include media($sm){
-      height: 400px;
+    @include media(1090px) {
+      justify-self: center;
+      padding: 0 10px;
     }
-    @include media($xs){
-      height: 250px;
-    }
-  }
-  &__card{
-    position: absolute;
-    bottom: -10%;
-    left: 10%;
-    padding: 72px 38px 80px 40px;
-    width: 500px;
-    max-width: 100%;
-    background: #FEFEFE;
-    filter: drop-shadow(-27px 21px 44px rgba(0, 0, 0, 0.12));
-    @include media($sm){
-      position: relative;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
-    @include media($xs){
-      padding: 40px 20px 39px 23px;
-    }
-    &__title{
-      position: relative;
-      @include mainHeaderType;
-    }
-    &__descr{
-      margin-top: 25px !important;
-      @include texts-descr;
+    @include media($xs) {
 
     }
   }
+  &__card {
+    max-width: 600px;
+    width: 100%;
+    @include media(1090px) {
+      margin-top: 25px;
+      justify-self: center;
+    }
+    @include media($xs) {
+
+    }
+
+    &__title {
+      font-weight: 100;
+      font-size: 4rem;
+      line-height: 70px;
+      @include media(1090px) {
+        text-align: center;
+      }
+      @include media($xs) {
+        font-size: 2rem;
+        line-height: unset;
+      }
+
+    }
+
+    &__descr {
+      margin-top: 60px;
+      font-size: 1rem;
+      line-height: 163.9%;
+      @include media(1090px) {
+        margin-top: 20px;
+        padding: 0 10px;
+      }
+      @include media(321px) {
+        line-height: unset;
+      }
+      /* or 29px */
+      letter-spacing: 0.015em;
+
+      & > li {
+        list-style: decimal;
+        @include media(1090px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
-.solution{
-  flex-direction: row;
-  margin-top: 260px;
-  @include media($sm){
+
+.other-wall {
+  background-image: url("../../images/pexels-adrien-olichon-2823459.jpg");
+}
+
+.column-revert {
+  @include media(1090px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.self-center {
+  justify-self: flex-end;
+}
+
+.jastify-end {
+  justify-self: flex-end;
+}
+
+.solution {
+
+  @include media($sm) {
     flex-direction: column;
   }
+
   &__card {
     position: absolute;
     bottom: -10%;
@@ -343,17 +555,11 @@
   }
 }
 .swiper {
-  width: 50%;
+  width: 100%;
   max-height: 400px;
   height: 100%;
-  @include media($sm){
-    width: 100%;
-    max-height: 300px;
-    max-width: 100%;
-    margin-top: 60px;
 
-  }
-  &__img{
+  &__img {
     height: 500px;
     width: 100%;
     object-fit: cover;
@@ -403,71 +609,21 @@
     }
   }
 }
-.partners{
-  @include container__larges;
-  margin-top: 114px;
-  &__title{
-    width: 131px;
-    position: relative;
-    margin-bottom: 100px;
-    @include mainHeaderType;
-  }
-  &__cards{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    column-gap: 30px;
-    row-gap: 30px;
-    @include media($sm){
-      grid-template-columns: repeat(2,1fr);
-    }
-    @include media(320px){
-      grid-template-columns: repeat(1, 1fr);
-    }
-    &-bg{
-      background: $white;
-      padding: 60px 90px;
-      @include media(971px){
-        column-gap: 10px;
-        row-gap: 10px;
-      }
-      @include media($xs){
-        padding: 30px 15px;
-      }
-    }
-    &__img{
-      width: 300px;
-      max-width: 100%;
-      height: 100px;
-      object-fit: contain;
-    }
-    &__card{
-      border: 1px solid $grey;
-      padding: 30px 10px;
-      @include media(1025px){
-        padding: 15px 10px;
-      }
-    }
-  }
-}
-.contactInfo{
-  position: relative;
-  margin-top: 100px;
-  background-image: url('../../images/main/contact.jpg');
+
+.contactInfo {
+  background-image: url("../../images/pexels-adrien-olichon-2823459.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 130px;
   color: $white;
-  &__title{
+
+  &__title {
     margin-top: 66px;
-    width: 230px;
-    position: relative;
-    @include mainHeaderType;
-    &:after{
-      background: $white;
+    font-size: 4rem;
+    text-align: center;
+    @include media($sm) {
+      font-size: 2rem;
     }
   }
   &__pos{
@@ -502,7 +658,8 @@
     @include media($sm){
       margin-top: 60px;
     }
-    &__descr{
+    &__descr {
+      color: #000;
       max-width: 360px;
       font-weight: 400;
       font-size: 20px;
@@ -511,7 +668,7 @@
       margin-bottom: 30px;
       position: relative;
 
-      &:after{
+      &:after {
         position: absolute;
         content: '';
         display: block;
@@ -526,22 +683,23 @@
     }
   }
 }
-.phone{
+.phone {
   -webkit-transition: .5s;
   -moz-transition: .5s;
   -ms-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
-  color: $color;
-  &:hover{
+  color: black;
+
+  &:hover {
     color: $red;
   }
 }
-#footer{
+#footer {
   padding-top: 45px;
   padding-bottom: 40px;
   background: $blue;
-  color: $white;
+  color: black;
 }
 .footer{
   display: flex;
@@ -564,11 +722,11 @@
       align-items: center;
     }
   }
-  &__copy{
+  &__copy {
     margin-top: 50px;
-    color: $white;
+    color: #cecece;
     text-align: center;
-    @include media($xs){
+    @include media($xs) {
       font-size: 14px;
     }
   }

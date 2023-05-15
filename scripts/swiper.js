@@ -49,29 +49,22 @@ gsap.from('.header__info__description', {
     duration: 1
 })
 
-let proImg = document.querySelectorAll('.products__img')
-let proCard = document.querySelectorAll('.products__card');
+let proImg = document.querySelectorAll('.products__card')
+let proCard = document.querySelectorAll('.products__img');
 let solCard = document.querySelectorAll('.solution__card');
 let about = document.querySelectorAll('.about');
-proImg.forEach(el => {
-    gsap.from(el, {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        scrollTrigger: {
-            trigger: el,
-        }
+if (window.innerWidth > 1090) {
+    proCard.forEach(el => {
+        gsap.to(el, {
+            y: -200,
+            scrollTrigger: {
+                trigger: el,
+                scrub: 2,
+                start: "top center",
+            }
+        })
     })
-})
-proCard.forEach(el => {
-    gsap.to(el, {
-        y: -200,
-        scrollTrigger: {
-            trigger: el,
-            scrub: 1
-        }
-    })
-})
+}
 solCard.forEach(el => {
     gsap.to(el, {
         y: -150,
@@ -95,4 +88,12 @@ gsap.from('.about__info__header', {
     y: 100,
     opacity: 0,
     duration: 1,
+})
+
+let btnSw = document.querySelectorAll('.sw-display-none');
+
+btnSw.forEach(el => {
+    if (window.innerWidth < 768) {
+        el.classList.add('sw-none')
+    }
 })

@@ -15,8 +15,9 @@ ul {
   margin-bottom: 0 !important;
 }
 body {
+  width: 100vw;
   font-family: $font-play !important;
-  background: #ececec !important;
+  background: $body !important;
   color: $color;
   overflow-x: hidden;
 }
