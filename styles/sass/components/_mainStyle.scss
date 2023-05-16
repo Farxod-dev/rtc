@@ -512,12 +512,22 @@
         row-gap: 20px;
         justify-content: center;
         justify-items: center;
+        @include media($sm) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include media($xs) {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       &__icon {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
+        @include media($xs) {
+          padding: 0 15px;
+        }
 
         &__img {
           height: 70px;
